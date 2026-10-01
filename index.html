@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Six Thinking Hats team preference self-assessment" />
+  <title>Six Thinking Hats | Team Preference Profile</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="intro" class="panel hero">
+      <div class="hat-row" aria-hidden="true">
+        <span class="hat white">●</span><span class="hat red">●</span><span class="hat black">●</span>
+        <span class="hat yellow">●</span><span class="hat green">●</span><span class="hat blue">●</span>
+      </div>
+      <p class="eyebrow">CS Engineering · Team Thinking Profile</p>
+      <h1>Six Thinking Hats</h1>
+      <p class="lede">How do you naturally contribute when a small team is solving a design problem?</p>
+      <div class="instruction-card">
+        <p>For each statement, choose a score from <strong>0–5</strong>.</p>
+        <div class="scale-key"><span><b>0</b> Not like me</span><span><b>5</b> Definite preference</span></div>
+        <p class="small">There are no “good” or “bad” profiles. The goal is to notice the kinds of thinking you tend to bring to a team.</p>
+      </div>
+      <button id="startBtn" class="primary">Start assessment</button>
+    </section>
+
+    <section id="assessment" class="panel hidden" aria-live="polite">
+      <div class="assessment-top">
+        <div>
+          <p class="eyebrow">When working on a small team, I would tend to…</p>
+          <h2 id="questionNumber">Question 1 of 30</h2>
+        </div>
+        <button id="resetBtn" class="text-btn">Start over</button>
+      </div>
+      <div class="progress" aria-label="Assessment progress"><div id="progressFill"></div></div>
+      <div class="question-card">
+        <p id="questionText" class="question-text"></p>
+        <div id="scaleButtons" class="scale-buttons" role="radiogroup" aria-label="Response from 0 to 5"></div>
+        <div class="scale-labels"><span>0 · Not like me</span><span>5 · Definite preference</span></div>
+      </div>
+      <div class="nav-row">
+        <button id="backBtn" class="secondary">Back</button>
+        <span id="answeredCount" class="answered"></span>
+        <button id="nextBtn" class="primary" disabled>Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="panel hidden">
+      <p class="eyebrow">Your Team Thinking Profile</p>
+      <h1>Your results</h1>
+      <p class="lede result-intro">Your strongest scores show which modes of thinking you naturally lean toward. A balanced engineering team benefits from several different modes.</p>
+
+      <div id="topSummary" class="top-summary"></div>
+      <div id="resultsGrid" class="results-grid"></div>
+
+      <details class="method-note">
+        <summary>How are these scores calculated?</summary>
+        <p>Each hat is the average of five questions. To match the original spreadsheet, the page also compares each hat average with your overall response average and standard deviation, then converts that z-score to a normal-distribution percentile.</p>
+        <p><strong>Important:</strong> this percentile is relative to <em>your own pattern of answers</em>. It does not mean you scored higher than that percentage of other people.</p>
+      </details>
+
+      <div class="actions">
+        <button id="printBtn" class="secondary">Print / Save results</button>
+        <button id="retakeBtn" class="primary">Retake assessment</button>
+      </div>
+
+      <p class="source-note">Adapted from a Six Thinking Hats team-formation instrument described by Jensen et al., ASEE Annual Conference (2000).</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
